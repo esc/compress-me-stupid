@@ -89,6 +89,10 @@ Which, reinterpreted as ``uint64`` is::
 Shuffle Filter Benefits
 -----------------------
 
+* Works well for multibyte data with small differences
+
+  * e.g. Timeseries
+
 * Exploit similarity between elements
 * Lump together bytes that are alike
 * Create longer streams of similar bytes
