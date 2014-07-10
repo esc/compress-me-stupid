@@ -97,11 +97,35 @@ Shuffle Filter Benefits
 Shuffle Fail
 ------------
 
-* It does not work well on all datasets
+It does not work well on all datasets, observe::
+
+    [18446744073709551615, 0, 0, 0]
+
+Or, as ``uint8``::
+
+    [255, 255, 255, 255, 255, 255, 255, 255,
+     0,   0,   0,   0,   0,   0,   0,   0,
+     0,   0,   0,   0,   0,   0,   0,   0,
+     0,   0,   0,   0,   0,   0,   0,   0]
+
+Shuffle Fail in action
+----------------------
+
+When shuffled yields::
+
+    [1095216660735, 1095216660735, 
+     1095216660735, 1095216660735]
+
+Or, as ``uint8``::
+
+    [255,   0,   0,   0, 255,   0,   0,   0,
+     255,   0,   0,   0, 255,   0,   0,   0,
+     255,   0,   0,   0, 255,   0,   0,   0,
+     255,   0,   0,   0, 255,   0,   0,   0]
 
 
-OK, so whats under the hood?
-----------------------------
+OK, so what else is  *under the hood*?
+--------------------------------------
 
 * By default it uses **Blosclz** -- derived from **Fastlz**
 
@@ -117,8 +141,8 @@ implemented.
 Blosc + X
 ---------
 
-So... using Blosc + X can yield higher compression ratios using the shuffle
-filter and faster compression/decompression time using multithreading.
+So... using Blosc + X can yield **higher compression ratios** using the shuffle
+filter and **faster compression/decompression** time using multithreading.
 
 That's pretty neat!
 
