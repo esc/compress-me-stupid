@@ -39,14 +39,6 @@ From ``Objects/obmalloc.c``::
 Blosc
 =====
 
-Shuffle Filter
---------------
-
-* How does it work
-* For what kind of datasets does it work well?
-* For what kind of datasets does it not work?
-* SSE2 instructions
-
 Blosc is a Metacodec
 --------------------
 
@@ -57,6 +49,56 @@ Blosc is a Metacodec
   * Management of threads
 
 * Can use 'real' codecs under the hood.
+
+Shuffle Filter
+--------------
+
+* Reorganization of bytes within a block
+* Reorder by byte significance
+
+Shuffle Filter Example -- Setup
+-------------------------------
+
+Imagine we have the following array as ``uint64`` (8 byte, unsigned integer)::
+
+    [0, 1, 2, 3]
+
+Reinterpret this as ``uint8``::
+
+    [0, 0, 0, 0, 0, 0, 0, 0,
+     1, 0, 0, 0, 0, 0, 0, 0,
+     2, 0, 0, 0, 0, 0, 0, 0,
+     3, 0, 0, 0, 0, 0, 0, 0]
+
+Shuffle Filter Example -- Application
+-------------------------------------
+
+What the shuffle filter does is::
+
+    [0, 1, 2, 3, 0, 0, 0, 0,
+     0, 0, 0, 0, 0, 0, 0, 0,
+     0, 0, 0, 0, 0, 0, 0, 0,
+     0, 0, 0, 0, 0, 0, 0, 0]
+
+Which, reinterpreted as ``uint64`` is::
+
+    [50462976,        0,        0,        0]
+
+Shuffle Filter Benefits
+-----------------------
+
+* Exploit similarity between elements
+* Lump together bytes that are alike
+* Create longer streams of similar bytes
+* Better for compression
+
+* Shuffle filter implemented using SSE2 instructions
+
+Shuffle Fail
+------------
+
+* It does not work well on all datasets
+
 
 OK, so whats under the hood?
 ----------------------------
