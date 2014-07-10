@@ -56,6 +56,8 @@ Shuffle Filter
 * Reorganization of bytes within a block
 * Reorder by byte significance
 
+.. image:: shuffle.pdf
+
 Shuffle Filter Example -- Setup
 -------------------------------
 
