@@ -206,6 +206,8 @@ Python API
 
   * http://python-blosc.blosc.org/
 
+* Implemented as a C-extension using the Python-C-API
+
 Example -- Compress
 -------------------
 
