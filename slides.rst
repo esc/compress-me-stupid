@@ -208,8 +208,8 @@ Python API
 
 * Implemented as a C-extension using the Python-C-API
 
-Example -- Compress
--------------------
+Example -- Setup
+----------------
 
 .. code-block:: pycon
 
@@ -220,6 +220,9 @@ Example -- Compress
 .. code-block:: pycon
 
     >>> bytes_array = np.linspace(0, 100, 1e7).tostring()
+
+Example -- Compress
+-------------------
 
 .. code-block:: pycon
 
@@ -266,6 +269,9 @@ Example -- Demystified
 * Blosc works really well for the ``linspace`` dataset
 * Shuffle filter and multithreading bring benefits
 
+Example -- Speed Demystified
+----------------------------
+
 .. code-block:: pycon
 
     >>> blosc.set_nthreads(1)
@@ -275,6 +281,9 @@ Example -- Demystified
     ...                                  clevel=9,
     ...                                  shuffle=False)
     1 loops, best of 3: 12.9 s per loop
+
+Example -- Ratio Demystified
+----------------------------
 
 .. code-block:: pycon
 
