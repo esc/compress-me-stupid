@@ -154,60 +154,27 @@ filter and **faster compression/decompression** time using multithreading.
 
 That's pretty neat!
 
-Installation and Compilation
-============================
-
-Installation via Package -- PyPi/``pip``
-----------------------------------------
-
-Using ``pip`` (inside a virtualenv)::
-
-    $ pip install blosc
-
-Provided you have a ``C++`` (not just ``C``) compiler..
-
-Installation via Package -- binstar/``conda``
----------------------------------------------
-
-Using ``conda``::
-
-    $ conda install -c https://conda.binstar.org/esc python-blosc
-
-Experimental, Numpy 1.8 / Python 2.7 only..
-
-
-Installation via Package -- gentoo/``emerge``
----------------------------------------------
-
-Presumably::
-
-    $ emerge python-blosc
-
-I discovered this randomly while surfing the web.
-
-Compilation / Packaging
------------------------
-
-Blosc is a metacodec
-
-.. image:: blosc-deps.pdf
-   :scale: 20%
-
 Python-Blosc
 ============
 
 Python API
 ----------
 
-* It's a codec, so naturally we have a ``compress/decompress`` pair
+* It's a codec
+
+  * Naturally we have a ``compress/decompress`` pair
 
 * Can operate on byte strings or pointers (encoded as integers)
 
   * ``compress`` vs. ``compress_ptr``
 
-* Tutorials: http://python-blosc.blosc.org/tutorial.html
+* Tutorials
 
-* API documentation: http://python-blosc.blosc.org/
+  * http://python-blosc.blosc.org/tutorial.html
+
+* API documentation
+
+  * http://python-blosc.blosc.org/
 
 Example -- Compress
 -------------------
@@ -279,9 +246,52 @@ Example -- Demystified
     >>> len(zpacked) / len(bpacked)
     0.713310695878436
 
+Installation and Compilation
+============================
+
+Installation via Package -- PyPi/``pip``
+----------------------------------------
+
+Using ``pip`` (inside a virtualenv)::
+
+    $ pip install blosc
+
+Provided you have a ``C++`` (not just ``C``) compiler..
+
+Installation via Package -- binstar/``conda``
+---------------------------------------------
+
+Using ``conda``::
+
+    $ conda install -c https://conda.binstar.org/esc python-blosc
+
+Experimental, Numpy 1.8 / Python 2.7 only..
+
+
+Installation via Package -- gentoo/``emerge``
+---------------------------------------------
+
+Presumably::
+
+    $ emerge python-blosc
+
+I discovered this randomly while surfing the web.
+
+Compilation / Packaging
+-----------------------
+
+Blosc is a metacodec
+
+.. image:: blosc-deps.pdf
+   :scale: 20%
 
 Other Projects that use Blosc
 -----------------------------
 
-* Bloscpack
-* CArray / BLZ / bcolz
+:PyTables:
+    HDF Library
+:Bloscpack:
+    Simple fileformat and Python implementation
+:CArray / BLZ / bcolz:
+    In-memory and out-of-core compressed array-like struture
+
