@@ -254,6 +254,12 @@ Example -- Demystified
     >>> len(zpacked) / len(bpacked)
     0.9996947439311876
 
+C-extension notes
+-----------------
+
+* Uses ``_PyBytesResize`` to resize a string after compressing into it
+* Release the GIL before compression and decompression.
+
 Installation and Compilation
 ============================
 
