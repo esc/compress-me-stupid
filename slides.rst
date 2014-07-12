@@ -39,6 +39,25 @@ Problem: *It's the memory, Stupid!*
 
 Solution: *Compress me, Stupid!*
 
+.. where the rubber meets the road...
+.. ----------------------------------
+.. 
+.. From ``Objects/obmalloc.c``::
+.. 
+..     /*
+..      * "Memory management is where the rubber meets the road --
+..      * if we do the wrong thing at any level, the results will
+..      * not be good. And if we don't make the levels work well
+..      * together, we are in serious trouble." (1)
+..      *
+..      * (1) Paul R. Wilson, Mark S. Johnstone, Michael Neely,
+..      * and David Boles, "Dynamic Storage Allocation:
+..      * A Survey and Critical Review", in Proc. 1995
+..      * Int'l. Workshop on Memory Management, September 1995.
+..      */
+
+Blosc
+=====
 
 Blosc
 -----
@@ -48,26 +67,6 @@ Blosc
 * Written in: C
 
 * In fact, it also works well in general purpose scenarios
-
-where the rubber meets the road...
-----------------------------------
-
-From ``Objects/obmalloc.c``::
-
-    /*
-     * "Memory management is where the rubber meets the road --
-     * if we do the wrong thing at any level, the results will
-     * not be good. And if we don't make the levels work well
-     * together, we are in serious trouble." (1)
-     *
-     * (1) Paul R. Wilson, Mark S. Johnstone, Michael Neely,
-     * and David Boles, "Dynamic Storage Allocation:
-     * A Survey and Critical Review", in Proc. 1995
-     * Int'l. Workshop on Memory Management, September 1995.
-     */
-
-Blosc
-=====
 
 Blosc is a Metacodec
 --------------------
@@ -323,14 +322,14 @@ Using ``conda``::
 Experimental, Numpy 1.8 / Python 2.7 only..
 
 
-Installation via Package -- gentoo/``emerge``
----------------------------------------------
-
-Presumably::
-
-    $ emerge python-blosc
-
-I discovered this randomly while surfing the web.
+.. Installation via Package -- gentoo/``emerge``
+.. ---------------------------------------------
+.. 
+.. Presumably::
+.. 
+..     $ emerge python-blosc
+.. 
+.. I discovered this randomly while surfing the web.
 
 Compilation / Packaging
 -----------------------
