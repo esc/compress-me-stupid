@@ -2,14 +2,23 @@
 Compress Me, Stupid!
 ====================
 
-A historical Perpective
-=======================
+A Historical Perspective
+=========================
 
+The Memory Hierarchy -- Up to end of 80's
+-----------------------------------------
 
-The memory Hierarchy
---------------------
+.. figure:: mem_hierarchy1.pdf
 
-* What is in it?
+The Memory Hierarchy -- 90's and 2000's
+---------------------------------------
+
+.. figure:: mem_hierarchy2.pdf
+
+The Memory Hierarchy -- 2010's
+------------------------------
+
+.. figure:: mem_hierarchy3.pdf
 
 Blosc
 -----
