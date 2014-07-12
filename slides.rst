@@ -326,10 +326,26 @@ I discovered this randomly while surfing the web.
 Compilation / Packaging
 -----------------------
 
-Blosc is a metacodec
+Blosc is a metacodec and as such has various dependencies
 
 .. image:: blosc-deps.pdf
    :scale: 20%
+
+Compilation / Packaging -- Flexibility is everything
+----------------------------------------------------
+
+* Blosc uses CMake and ships with all codec sources
+
+  * Try to link against existing codec library
+  * If not found, use shipped sources
+
+* Python-Blosc comes with Blosc sources
+
+  * Compile everything into Python module
+  * Or link againts Blosc library
+
+* Should be beneficial for packagers
+
 
 Other Projects that use Blosc
 -----------------------------
