@@ -192,13 +192,13 @@ Example -- Compress
 .. code-block:: pycon
 
     >>> %timeit bpacked = blosc.compress(bytes_array,
-    ...                                  typesize=8)
-    10 loops, best of 3: 36.2 ms per loop
+    ...                                  typesize=8,
+    ...                                  cname='zlib',
+    ...                                  clevel=9)
 
 .. code-block:: pycon
 
-    >>> %timeit zpacked = zlib.compress(bytes_array)
-    1 loops, best of 3: 5.72 s per loop
+    >>> %timeit zpacked = zlib.compress(bytes_array, 9)
 
 Example -- Ratio
 ----------------
@@ -206,10 +206,11 @@ Example -- Ratio
 .. code-block:: pycon
 
     >>> bpacked = blosc.compress(bytes_array,
-    ...                          typesize=8)
-    >>> zpacked = zlib.compress(bytes_array)
+    ...                          typesize=8,
+    ...                          cname='zlib',
+    ...                          clevel=9)
+    >>> zpacked = zlib.compress(bytes_array, 9)
     >>> len(zpacked) / len(bpacked)
-    6.9354286183922955
 
 Example -- Decompress
 ---------------------
@@ -217,12 +218,10 @@ Example -- Decompress
 .. code-block:: pycon
 
    >>> %timeit bupacked = blosc.decompress(bpacked)
-   10 loops, best of 3: 31.8 ms per loop
 
 .. code-block:: pycon
 
-   >>> %timeit zupacked = zlib.compress(zpacked)
-   1 loops, best of 3: 398 ms per loop
+   >>> %timeit zupacked = zlib.decompress(zpacked)
 
 Example -- Demystified
 ----------------------
@@ -235,16 +234,18 @@ Example -- Demystified
     >>> blosc.set_nthreads(1)
     >>> %timeit bpacked = blosc.compress(bytes_array,
     ...                                  typesize=8,
+    ...                                  cname='zlib',
+    ...                                  clevel=9,
     ...                                  shuffle=False)
-    1 loops, best of 3: 315 ms per loop
 
 .. code-block:: pycon
 
     >>> bpacked = blosc.compress(bytes_array,
     ...                          typesize=8,
+    ...                          cname='zlib',
+    ...                          clevel=9,
     ...                          shuffle=False)
     >>> len(zpacked) / len(bpacked)
-    0.713310695878436
 
 Installation and Compilation
 ============================
