@@ -192,13 +192,63 @@ Blosc is a metacodec
    :scale: 20%
 
 Python-Blosc
-------------
+============
 
-* How to use / API
+Python API
+----------
 
-* Bytes and Pointers
+* It's a codec, so naturally we have a ``compress/decompress`` pair
 
-* How to install / compile
+* Can operate on byte strings or pointers (encoded as integers)
+
+  * ``compress`` vs. ``compress_ptr``
+
+* Tutorials: http://python-blosc.blosc.org/tutorial.html
+
+* API documentation: http://python-blosc.blosc.org/
+
+Example -- Compress
+-------------------
+
+.. code-block:: pycon
+
+    >>> import numpy as np
+    >>> bytes_array = np.linspace(0, 100, 1e7).tostring()
+
+.. code-block:: pycon
+
+    >>> import blosc
+    >>> %timeit bpacked = blosc.compress(bytes_array, typesize=8)
+    10 loops, best of 3: 36.2 ms per loop
+
+.. code-block:: pycon
+
+    >>> import zlib
+    >>> %timeit zpacked = zlib.compress(bytes_array)
+    1 loops, best of 3: 5.72 s per loop
+
+Example -- Ratio
+----------------
+
+.. code-block:: pycon
+
+    >>> bpacked = blosc.compress(bytes_array, typesize=8)
+    >>> zpacked = zlib.compress(bytes_array)
+    >>> len(zpacked) / len(bpacked)
+    6.9354286183922955
+
+Example -- Decompress
+---------------------
+
+.. code-block:: pycon
+
+   >>> %timeit bupacked = blosc.decompress(bpacked)
+   10 loops, best of 3: 31.8 ms per loop
+
+.. code-block:: pycon
+
+   >>> %timeit zupacked = zlib(zpacked)
+   1 loops, best of 3: 398 ms per loop
 
 Other Projects that use Blosc
 -----------------------------
