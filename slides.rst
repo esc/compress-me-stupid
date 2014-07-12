@@ -49,6 +49,8 @@ Blosc is a Metacodec
   * Management of threads
 
 * Can use 'real' codecs under the hood.
+* Filters and codecs are applied to each block
+* Thread-level parallelism on blocks
 
 Shuffle Filter
 --------------
@@ -213,17 +215,20 @@ Example -- Compress
 .. code-block:: pycon
 
     >>> import numpy as np
+    >>> import blosc
+    >>> import zlib
+
+.. code-block:: pycon
+
     >>> bytes_array = np.linspace(0, 100, 1e7).tostring()
 
 .. code-block:: pycon
 
-    >>> import blosc
     >>> %timeit bpacked = blosc.compress(bytes_array, typesize=8)
     10 loops, best of 3: 36.2 ms per loop
 
 .. code-block:: pycon
 
-    >>> import zlib
     >>> %timeit zpacked = zlib.compress(bytes_array)
     1 loops, best of 3: 5.72 s per loop
 
@@ -247,8 +252,26 @@ Example -- Decompress
 
 .. code-block:: pycon
 
-   >>> %timeit zupacked = zlib(zpacked)
+   >>> %timeit zupacked = zlib.compress(zpacked)
    1 loops, best of 3: 398 ms per loop
+
+Example -- Demystified
+----------------------
+
+* Blosc works really well for the ``linspace`` dataset
+* Shuffle filter and multithreading bring benefits
+
+.. code-block:: pycon
+
+    >>> blosc.set_nthreads(1)
+    >>> %timeit bpacked = blosc.compress(bytes_array, typesize=8, shuffle=False)
+    1 loops, best of 3: 315 ms per loop
+
+.. code-block:: pycon
+
+    >>> bpacked = blosc.compress(bytes_array, typesize=8, shuffle=False)
+    >>> len(zpacked) / len(bpacked)
+
 
 Other Projects that use Blosc
 -----------------------------
