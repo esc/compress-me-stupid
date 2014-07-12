@@ -224,7 +224,8 @@ Example -- Compress
 
 .. code-block:: pycon
 
-    >>> %timeit bpacked = blosc.compress(bytes_array, typesize=8)
+    >>> %timeit bpacked = blosc.compress(bytes_array,
+    ...                                  typesize=8)
     10 loops, best of 3: 36.2 ms per loop
 
 .. code-block:: pycon
@@ -237,7 +238,8 @@ Example -- Ratio
 
 .. code-block:: pycon
 
-    >>> bpacked = blosc.compress(bytes_array, typesize=8)
+    >>> bpacked = blosc.compress(bytes_array,
+    ...                          typesize=8)
     >>> zpacked = zlib.compress(bytes_array)
     >>> len(zpacked) / len(bpacked)
     6.9354286183922955
@@ -264,13 +266,18 @@ Example -- Demystified
 .. code-block:: pycon
 
     >>> blosc.set_nthreads(1)
-    >>> %timeit bpacked = blosc.compress(bytes_array, typesize=8, shuffle=False)
+    >>> %timeit bpacked = blosc.compress(bytes_array,
+    ...                                  typesize=8,
+    ...                                  shuffle=False)
     1 loops, best of 3: 315 ms per loop
 
 .. code-block:: pycon
 
-    >>> bpacked = blosc.compress(bytes_array, typesize=8, shuffle=False)
+    >>> bpacked = blosc.compress(bytes_array,
+    ...                          typesize=8,
+    ...                          shuffle=False)
     >>> len(zpacked) / len(bpacked)
+    0.713310695878436
 
 
 Other Projects that use Blosc
