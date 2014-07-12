@@ -20,13 +20,34 @@ The Memory Hierarchy -- 2010's
 
 .. figure:: mem_hierarchy3.pdf
 
+Starving CPUs
+-------------
+
+The Status of CPU Starvation in 2014:
+
+* Memory latency is much slower (between250x and 1000x) than processors.
+
+* Memory bandwidth is improving at a better rate than memory latency,
+  but it is also slower than processors (between 30x and 100x).
+
+* Net effect: CPUs are often waiting for data
+
+It's the memory, Stupid
+-----------------------
+
+Problem: *It's the memory, Stupid!*
+
+Solution: *Compress me, Stupid!*
+
+
 Blosc
 -----
 
-* It's the memory stupid!
-* Starving CPUs
-* What is it?
-* What is 'blocking' in this context
+* Designed for: in-memory compression
+* Adresses: the starving CPU Problem
+* Written in: C
+
+* In fact, it also works well in general purpose scenarios
 
 where the rubber meets the road...
 ----------------------------------
@@ -58,7 +79,7 @@ Blosc is a Metacodec
   * Management of threads
 
 * Can use 'real' codecs under the hood.
-* Filters and codecs are applied to each block
+* Filters and codecs are applied to each block (blocking)
 * Thread-level parallelism on blocks
 
 Shuffle Filter
