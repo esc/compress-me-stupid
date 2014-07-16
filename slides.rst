@@ -64,9 +64,9 @@ Blosc
 
 * Designed for: in-memory compression
 * Adresses: the starving CPU Problem
+* (In fact, it also works well in general purpose scenarios)
 * Written in: C
 
-* In fact, it also works well in general purpose scenarios
 
 Blosc is a Metacodec
 --------------------
@@ -219,9 +219,16 @@ Example -- Setup
 .. code-block:: pycon
 
     >>> bytes_array = np.linspace(0, 100, 1e7).tostring()
+    >>> len(bytes_array)
+    80000000
 
 Example -- Compress
 -------------------
+
+.. code-block:: pycon
+
+    >>> %timeit zpacked = zlib.compress(bytes_array, 9)
+    1 loops, best of 3: 14.7 s per loop
 
 .. code-block:: pycon
 
@@ -231,13 +238,14 @@ Example -- Compress
     ...                                  clevel=9)
     1 loops, best of 3: 317 ms per loop
 
-.. code-block:: pycon
-
-    >>> %timeit zpacked = zlib.compress(bytes_array, 9)
-    1 loops, best of 3: 14.7 s per loop
-
 Example -- Ratio
 ----------------
+
+.. code-block:: pycon
+
+    >>> zpacked = zlib.compress(bytes_array, 9)
+    >>> len(zpacked)
+    52945925
 
 .. code-block:: pycon
 
@@ -245,7 +253,15 @@ Example -- Ratio
     ...                          typesize=8,
     ...                          cname='zlib',
     ...                          clevel=9)
-    >>> zpacked = zlib.compress(bytes_array, 9)
+    >>> len(bpacked)
+    1011304
+
+.. code-block:: pycon
+
+    >>> len(bytes_array) / len(zpacked)
+    1.5109755849954458
+    >>> len(bytes_array) / len(bpacked)
+    79.10578817052044
     >>> len(zpacked) / len(bpacked)
     52.35411409427828
 
@@ -254,13 +270,14 @@ Example -- Decompress
 
 .. code-block:: pycon
 
-   >>> %timeit bupacked = blosc.decompress(bpacked)
-   10 loops, best of 3: 76.2 ms per loop
+   >>> %timeit zupacked = zlib.decompress(zpacked)
+   1 loops, best of 3: 388 ms per loop
 
 .. code-block:: pycon
 
-   >>> %timeit zupacked = zlib.decompress(zpacked)
-   1 loops, best of 3: 388 ms per loop
+   >>> %timeit bupacked = blosc.decompress(bpacked)
+   10 loops, best of 3: 76.2 ms per loop
+
 
 Example -- Demystified
 ----------------------
@@ -270,6 +287,8 @@ Example -- Demystified
 
 Example -- Speed Demystified
 ----------------------------
+
+    * Use a single thread and deactivate the shuffle filter
 
 .. code-block:: pycon
 
@@ -293,6 +312,59 @@ Example -- Ratio Demystified
     ...                          shuffle=False)
     >>> len(zpacked) / len(bpacked)
     0.9996947439311876
+
+
+So What about other Codecs? -- Compress
+---------------------------------------
+
+    * Zlib implements a comparatively slow algorithm (DEFLATE), let's try LZ4
+
+.. code-block:: pycon
+
+    >>> %timeit bzpacked = blosc.compress(bytes_array,
+    ...                                  typesize=8,
+    ...                                  cname='zlib',
+    ...                                  clevel=9)
+    1 loops, best of 3: 329 ms per loop
+
+.. code-block:: pycon
+
+    >>> %timeit blpacked = blosc.compress(bytes_array,
+    ...                                  typesize=8,
+    ...                                  cname='lz4',
+    ...                                  clevel=9)
+    10 loops, best of 3: 20.9 ms per loop
+
+So What about other Codecs? -- Ratio
+------------------------------------
+
+    * Although this speed increase comes at the cost of comression ratio
+
+.. code-block:: pycon
+
+    >>> bzpacked = blosc.compress(bytes_array,
+    ...                           typesize=8,
+    ...                           cname='zlib',
+    ...                           clevel=9)
+    >>> blpacked = blosc.compress(bytes_array,
+    ...                           typesize=8,
+    ...                           cname='lz4',
+    ...                           clevel=9)
+    >>> len(bzpacked) / len(blpacked)
+    0.172963927766
+
+So What about other Codecs? -- Decompress
+-----------------------------------------
+
+.. code-block:: pycon
+
+   >>> %timeit bzupacked = blosc.decompress(bzpacked)
+   10 loops, best of 3: 74.3 ms per loop
+
+.. code-block:: pycon
+
+   >>> %timeit blupacked = blosc.decompress(blpacked)
+   10 loops, best of 3: 25.3 ms per loop
 
 C-extension notes
 -----------------
