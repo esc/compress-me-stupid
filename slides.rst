@@ -252,10 +252,10 @@ Example -- Compress
 
 .. code-block:: pycon
 
-    >>> %timeit bpacked = blosc.compress(bytes_array,
-    ...                                  typesize=8,
-    ...                                  cname='zlib',
-    ...                                  clevel=9)
+    >>> %timeit bzpacked = blosc.compress(bytes_array,
+    ...                                   typesize=8,
+    ...                                   cname='zlib',
+    ...                                   clevel=9)
     1 loops, best of 3: 317 ms per loop
 
 Example -- Ratio
@@ -269,10 +269,10 @@ Example -- Ratio
 
 .. code-block:: pycon
 
-    >>> bpacked = blosc.compress(bytes_array,
-    ...                          typesize=8,
-    ...                          cname='zlib',
-    ...                          clevel=9)
+    >>> bzpacked = blosc.compress(bytes_array,
+    ...                           typesize=8,
+    ...                           cname='zlib',
+    ...                           clevel=9)
     >>> len(bpacked)
     1011304
 
@@ -280,9 +280,9 @@ Example -- Ratio
 
     >>> len(bytes_array) / len(zpacked)
     1.5109755849954458
-    >>> len(bytes_array) / len(bpacked)
+    >>> len(bytes_array) / len(bzpacked)
     79.10578817052044
-    >>> len(zpacked) / len(bpacked)
+    >>> len(zpacked) / len(bzpacked)
     52.35411409427828
 
 Example -- Decompress
@@ -295,7 +295,7 @@ Example -- Decompress
 
 .. code-block:: pycon
 
-   >>> %timeit bupacked = blosc.decompress(bpacked)
+   >>> %timeit bupacked = blosc.decompress(bzpacked)
    10 loops, best of 3: 76.2 ms per loop
 
 
@@ -313,11 +313,11 @@ Example -- Speed Demystified
 .. code-block:: pycon
 
     >>> blosc.set_nthreads(1)
-    >>> %timeit bpacked = blosc.compress(bytes_array,
-    ...                                  typesize=8,
-    ...                                  cname='zlib',
-    ...                                  clevel=9,
-    ...                                  shuffle=False)
+    >>> %timeit bzpacked = blosc.compress(bytes_array,
+    ...                                   typesize=8,
+    ...                                   cname='zlib',
+    ...                                   clevel=9,
+    ...                                   shuffle=False)
     1 loops, best of 3: 12.9 s per loop
 
 Example -- Ratio Demystified
@@ -325,12 +325,12 @@ Example -- Ratio Demystified
 
 .. code-block:: pycon
 
-    >>> bpacked = blosc.compress(bytes_array,
-    ...                          typesize=8,
-    ...                          cname='zlib',
-    ...                          clevel=9,
-    ...                          shuffle=False)
-    >>> len(zpacked) / len(bpacked)
+    >>> bzpacked = blosc.compress(bytes_array,
+    ...                           typesize=8,
+    ...                           cname='zlib',
+    ...                           clevel=9,
+    ...                           shuffle=False)
+    >>> len(zpacked) / len(bzpacked)
     0.9996947439311876
 
 
@@ -445,6 +445,9 @@ Compilation / Packaging -- Flexibility is everything
   * Or link againts Blosc library
 
 * Should be beneficial for packagers
+
+Outro
+=====
 
 
 Other Projects that use Blosc
