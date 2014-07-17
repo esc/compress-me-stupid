@@ -32,6 +32,11 @@ The Status of CPU Starvation in 2014:
 
 * Net effect: CPUs are often waiting for data
 
+Faster-than-memcpy
+------------------
+
+
+
 It's the memory, Stupid
 -----------------------
 
