@@ -458,3 +458,22 @@ Other Projects that use Blosc
 :CArray / BLZ / bcolz:
     In-memory and out-of-core compressed array-like struture
 
+The Future
+----------
+
+* What might be coming
+
+  * More codecs
+  * Alternative filters
+  * A Go implementation
+
+* How can I help
+
+  * Run the benchmarks on your hardware, report the results
+  * http://blosc.org/synthetic-benchmarks.html
+  * Incorporate Blosc into your application
+
+Come to PyData
+--------------
+
+* PyData
