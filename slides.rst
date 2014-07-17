@@ -32,16 +32,6 @@ The Status of CPU Starvation in 2014:
 
 * Net effect: CPUs are often waiting for data
 
-Faster-than-``memcpy``
-----------------------
-
-.. image:: benchmark-compress.pdf
-
-Faster-than-``memcpy``
-----------------------
-
-.. image:: benchmark-decompress.pdf
-
 
 It's the memory, Stupid
 -----------------------
@@ -88,6 +78,15 @@ Blosc
 * (In fact, it also works well in general purpose scenarios)
 * Written in: C
 
+Faster-than-``memcpy``
+----------------------
+
+.. image:: benchmark-compress.pdf
+
+Faster-than-``memcpy``
+----------------------
+
+.. image:: benchmark-decompress.pdf
 
 Blosc is a Metacodec
 --------------------
