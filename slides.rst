@@ -40,9 +40,19 @@ Faster-than-memcpy
 It's the memory, Stupid
 -----------------------
 
-Problem: *It's the memory, Stupid!*
+.. raw:: latex
+
+   \vspace{2cm}
+
+Problem: *It's the memory, Stupid!* [1]
 
 Solution: *Compress me, Stupid!*
+
+.. raw:: latex
+
+   \vspace{2cm}
+
+[1] R. Sites. It’s the memory, stupid! MicroprocessorReport, 10(10),1996
 
 .. where the rubber meets the road...
 .. ----------------------------------
