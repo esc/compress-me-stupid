@@ -353,7 +353,7 @@ So What about other Codecs? -- Compress
 So What about other Codecs? -- Ratio
 ------------------------------------
 
-    * Although this speed increase comes at the cost of comression ratio
+    * Although this speed increase comes at the cost of compression ratio
 
 .. code-block:: pycon
 
