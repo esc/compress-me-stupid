@@ -472,6 +472,13 @@ The Future
   * http://blosc.org/synthetic-benchmarks.html
   * Incorporate Blosc into your application
 
+Getting in touch
+----------------
+
+* Main website: http://blosc.org
+* Github organization: http://github.com/Blosc
+* Google group: https://groups.google.com/forum/#!forum/blosc 
+
 Come to PyData
 --------------
 
