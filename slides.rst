@@ -25,7 +25,7 @@ Starving CPUs
 
 The Status of CPU Starvation in 2014:
 
-* Memory latency is much slower (between250x and 1000x) than processors.
+* Memory latency is much slower (between 100x and 500x) than processors.
 
 * Memory bandwidth is improving at a better rate than memory latency,
   but it is also slower than processors (between 30x and 100x).
