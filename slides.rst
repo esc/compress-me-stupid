@@ -487,6 +487,8 @@ The Future
 
   * More codecs
   * Alternative filters
+  * Auto-tune at runtime
+  * Multi-shuffle
   * A Go implementation
 
 * How can I help?
