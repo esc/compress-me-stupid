@@ -20,7 +20,7 @@ $(base).pdf: $(base).tex $(base).rst
 $(base).tex: $(base).rst
 
 clean:
-	-rm -vf $(addprefix $(base).,toc snm log aux out nav)
+	-rm -vf $(base)-fragile.tex ${base}.tex $(addprefix $(base)-fragile.,toc snm log aux out nav vrb)
 
 distclean: clean
-	-rm -vf $(base).pdf $(base)-fragile.tex "$(slidefilename)"-`cat git-sha`.pdf git-sha
+	-rm -vf $(base).pdf "$(slidefilename)"-`cat git-sha`.pdf git-sha
