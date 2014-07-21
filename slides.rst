@@ -74,7 +74,7 @@ Blosc
 -----
 
 * Designed for: in-memory compression
-* Adresses: the starving CPU Problem
+* Addresses: the starving CPU Problem
 * (In fact, it also works well in general purpose scenarios)
 * Written in: C
 
@@ -442,7 +442,7 @@ Compilation / Packaging -- Flexibility is everything
 * Python-Blosc comes with Blosc sources
 
   * Compile everything into Python module
-  * Or link againts Blosc library
+  * Or link against Blosc library
 
 * Should be beneficial for packagers
 
@@ -456,14 +456,14 @@ Other Projects that use Blosc
 :PyTables:
     HDF Library
 :Bloscpack:
-    Simple fileformat and Python implementation
+    Simple file-format and Python implementation
 :CArray / BLZ / bcolz:
-    In-memory and out-of-core compressed array-like struture
+    In-memory and out-of-core compressed array-like structure
 
 The Future
 ----------
 
-* What might be coming
+* What might be coming...
 
   * More codecs
   * Alternative filters
