@@ -469,7 +469,7 @@ The Future
   * Alternative filters
   * A Go implementation
 
-* How can I help
+* How can I help?
 
   * Run the benchmarks on your hardware, report the results
   * http://blosc.org/synthetic-benchmarks.html
