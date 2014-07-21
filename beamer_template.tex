@@ -17,6 +17,7 @@ $endif$
 \usepackage{lmodern}
 \usepackage{fancyvrb}
 \usepackage{color}
+
 \ifxetex
   \usepackage{fontspec,xltxtra,xunicode}
   \defaultfontfeatures{Mapping=tex-text,Scale=MatchLowercase}
@@ -136,10 +137,29 @@ $if(date)$
 \date{$date$}
 $endif$
 
+\input{creative_commons/cc_beamer}
+\author{Valentin Haenel}
+\institute{Freelance Consultant and Software Developer \\
+\url{http://haenel.co}}
+
+\title{INSERT TITLE}
+\definecolor{gray}{rgb}{0.10,0.10,0.10}
+\date{Jan 1970}
+
 \begin{document}
-$if(title)$
-\frame{\titlepage}
-$endif$
+
+\begin{frame}
+    \titlepage
+    \begin{center}
+    \tiny{Version: foo}
+    \hspace{1em}
+    \tiny\url{https://git.example.com/example}
+    \begin{tabular}[t]{lr}
+        \mbox{\CcGroupBySa{0.35}{0.95ex}}  &
+        \parbox[b]{8cm}{{\tiny\CcNote{\CcLongnameBySa}}} \\
+    \end{tabular}
+    \end{center}
+\end{frame}
 
 $for(include-before)$
 $include-before$
