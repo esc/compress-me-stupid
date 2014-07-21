@@ -177,7 +177,7 @@ Or, as ``uint8``:
      0,   0,   0,   0,   0,   0,   0,   0,
      0,   0,   0,   0,   0,   0,   0,   0]
 
-Shuffle Fail in action
+Shuffle Fail in Action
 ----------------------
 
 When shuffled yields:
@@ -350,8 +350,8 @@ Example -- Ratio Demystified
     0.9996947439311876
 
 
-So What about other Codecs? -- Compress
----------------------------------------
+So, What about other Codecs? -- Compress
+----------------------------------------
 
     * Zlib implements a comparatively slow algorithm (DEFLATE), let's try LZ4
 
@@ -371,8 +371,8 @@ So What about other Codecs? -- Compress
     ...                                  clevel=9)
     10 loops, best of 3: 20.9 ms per loop
 
-So What about other Codecs? -- Ratio
-------------------------------------
+So, What about other Codecs? -- Ratio
+-------------------------------------
 
     * Although this speed increase comes at the cost of compression ratio
 
@@ -389,8 +389,8 @@ So What about other Codecs? -- Ratio
     >>> len(bzpacked) / len(blpacked)
     0.172963927766
 
-So What about other Codecs? -- Decompress
------------------------------------------
+So, What about other Codecs? -- Decompress
+------------------------------------------
 
 .. code-block:: pycon
 
@@ -402,7 +402,7 @@ So What about other Codecs? -- Decompress
    >>> %timeit blupacked = blosc.decompress(blpacked)
    10 loops, best of 3: 25.3 ms per loop
 
-C-extension notes
+C-extension Notes
 -----------------
 
 * Uses ``_PyBytesResize`` to resize a string after compressing into it
@@ -450,7 +450,7 @@ Blosc is a metacodec and as such has various dependencies
 
 .. figure:: images/blosc-deps.pdf
 
-Compilation / Packaging -- Flexibility is everything
+Compilation / Packaging -- Flexibility is Everything
 ----------------------------------------------------
 
 * Blosc uses CMake and ships with all codec sources
