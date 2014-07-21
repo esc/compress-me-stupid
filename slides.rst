@@ -496,6 +496,18 @@ The Future
   * http://blosc.org/synthetic-benchmarks.html
   * Incorporate Blosc into your application
 
+Advertisment
+------------
+
+* EuroPython
+
+  * Francecs Alted - Out of Core Columnar Datasets - Friday 11:00 C01
+
+* PyData Berlin
+
+  * Francecs Alted - Data Oriented Programming - Saturday 13:30 B05
+  * Valentin Haenel - Fast Serialization of Numpy Arrays with Bloscpack - Sunday 11:00 am B05
+
 Getting In Touch
 ----------------
 
@@ -503,3 +515,4 @@ Getting In Touch
 * Github organization: http://github.com/Blosc
 * python-bloc: http://github.com/Blosc/python-blosc
 * Google group: https://groups.google.com/forum/#!forum/blosc 
+
