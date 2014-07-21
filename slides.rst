@@ -475,7 +475,7 @@ The Future
   * http://blosc.org/synthetic-benchmarks.html
   * Incorporate Blosc into your application
 
-Getting in touch
+Getting In Touch
 ----------------
 
 * Main website: http://blosc.org
