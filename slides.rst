@@ -480,9 +480,5 @@ Getting in touch
 
 * Main website: http://blosc.org
 * Github organization: http://github.com/Blosc
+* python-bloc: http://github.com/Blosc/python-blosc
 * Google group: https://groups.google.com/forum/#!forum/blosc 
-
-Come to PyData
---------------
-
-* PyData
