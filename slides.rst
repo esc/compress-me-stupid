@@ -8,17 +8,17 @@ A Historical Perspective
 The Memory Hierarchy -- Up to end of 80's
 -----------------------------------------
 
-.. figure:: mem_hierarchy1.pdf
+.. figure:: images/mem_hierarchy1.pdf
 
 The Memory Hierarchy -- 90's and 2000's
 ---------------------------------------
 
-.. figure:: mem_hierarchy2.pdf
+.. figure:: images/mem_hierarchy2.pdf
 
 The Memory Hierarchy -- 2010's
 ------------------------------
 
-.. figure:: mem_hierarchy3.pdf
+.. figure:: images/mem_hierarchy3.pdf
 
 Starving CPUs
 -------------
@@ -81,12 +81,12 @@ Blosc
 Faster-than-``memcpy``
 ----------------------
 
-.. image:: benchmark-compress.pdf
+.. figure:: images/benchmark-compress.pdf
 
 Faster-than-``memcpy``
 ----------------------
 
-.. image:: benchmark-decompress.pdf
+.. figure:: images/benchmark-decompress.pdf
 
 Blosc is a Metacodec
 --------------------
@@ -107,7 +107,7 @@ Shuffle Filter
 * Reorganization of bytes within a block
 * Reorder by byte significance
 
-.. image:: shuffle.pdf
+.. figure:: images/shuffle.pdf
 
 Shuffle Filter Example -- Setup
 -------------------------------
@@ -448,8 +448,7 @@ Compilation / Packaging
 
 Blosc is a metacodec and as such has various dependencies
 
-.. image:: blosc-deps.pdf
-   :scale: 20%
+.. figure:: images/blosc-deps.pdf
 
 Compilation / Packaging -- Flexibility is everything
 ----------------------------------------------------
