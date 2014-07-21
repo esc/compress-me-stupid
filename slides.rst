@@ -112,11 +112,15 @@ Shuffle Filter
 Shuffle Filter Example -- Setup
 -------------------------------
 
-Imagine we have the following array as ``uint64`` (8 byte, unsigned integer)::
+Imagine we have the following array as ``uint64`` (8 byte, unsigned integer):
+
+.. code-block::
 
     [0, 1, 2, 3]
 
-Reinterpret this as ``uint8``::
+Reinterpret this as ``uint8``:
+
+.. code-block::
 
     [0, 0, 0, 0, 0, 0, 0, 0,
      1, 0, 0, 0, 0, 0, 0, 0,
@@ -126,14 +130,18 @@ Reinterpret this as ``uint8``::
 Shuffle Filter Example -- Application
 -------------------------------------
 
-What the shuffle filter does is::
+What the shuffle filter does is:
+
+.. code-block::
 
     [0, 1, 2, 3, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0,
      0, 0, 0, 0, 0, 0, 0, 0]
 
-Which, reinterpreted as ``uint64`` is::
+Which, reinterpreted as ``uint64`` is:
+
+.. code-block::
 
     [50462976,        0,        0,        0]
 
@@ -154,11 +162,15 @@ Shuffle Filter Benefits
 Shuffle Fail
 ------------
 
-It does not work well on all datasets, observe::
+It does not work well on all datasets, observe:
+
+.. code-block::
 
     [18446744073709551615, 0, 0, 0]
 
-Or, as ``uint8``::
+Or, as ``uint8``:
+
+.. code-block::
 
     [255, 255, 255, 255, 255, 255, 255, 255,
      0,   0,   0,   0,   0,   0,   0,   0,
@@ -168,12 +180,16 @@ Or, as ``uint8``::
 Shuffle Fail in action
 ----------------------
 
-When shuffled yields::
+When shuffled yields:
+
+.. code-block::
 
     [1095216660735, 1095216660735, 
      1095216660735, 1095216660735]
 
-Or, as ``uint8``::
+Or, as ``uint8``:
+
+.. code-block::
 
     [255,   0,   0,   0, 255,   0,   0,   0,
      255,   0,   0,   0, 255,   0,   0,   0,
@@ -398,7 +414,9 @@ Installation and Compilation
 Installation via Package -- PyPi/``pip``
 ----------------------------------------
 
-Using ``pip`` (inside a virtualenv)::
+Using ``pip`` (inside a virtualenv):
+
+.. code-block:: console
 
     $ pip install blosc
 
@@ -407,7 +425,9 @@ Provided you have a ``C++`` (not just ``C``) compiler..
 Installation via Package -- binstar/``conda``
 ---------------------------------------------
 
-Using ``conda``::
+Using ``conda``:
+
+.. code-block:: console
 
     $ conda install -c https://conda.binstar.org/esc python-blosc
 
