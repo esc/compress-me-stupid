@@ -12,6 +12,8 @@ Dependencies
 * `Pygments <http://pygments.org/>`_
 * `ccBeamer <http://blog.hartwork.org/?p=52>`_ (included in repository)
 
+Importantly, this talk is made with an experimental filter that allows using
+pygments from pandoc.
 
 Licence
 -------
