@@ -19,8 +19,8 @@ Licence
 * All Content is...
 
   * Copyright 2014 Valentin Haenel <valentin@blosc.io>
-  * Licensed under the terms of [Attribution-ShareAlike 3.0 Unported
-    `CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>`_
+  * Licensed under the terms of `Attribution-ShareAlike 3.0 Unported
+    CC BY-SA 3.0 <http://creativecommons.org/licenses/by-sa/3.0/>`_
 
 * ccBeamer (directory: ``creative_commons/``) is licensed under Creative Commons
   Attribution-ShareAlike 3.0
