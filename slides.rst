@@ -515,4 +515,5 @@ Getting In Touch
 * Github organization: http://github.com/Blosc
 * python-bloc: http://github.com/Blosc/python-blosc
 * Google group: https://groups.google.com/forum/#!forum/blosc 
+* This talk: https://github.com/esc/compress-me-stupid
 
