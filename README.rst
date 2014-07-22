@@ -7,7 +7,7 @@ First presented at EuroPython 2014 in Berlin by Valentin Haenel.
 Dependencies
 ------------
 
-* `pandoc <http://johnmacfarlane.net/pandoc/>`_
+* `pandoc <http://johnmacfarlane.net/pandoc/>`_ (1.12.4.2)
 * `LaTeX Beamer <https://bitbucket.org/rivanvx/beamer/wiki/Home>`_
 * `Pygments <http://pygments.org/>`_
 * `ccBeamer <http://blog.hartwork.org/?p=52>`_ (included in repository)
