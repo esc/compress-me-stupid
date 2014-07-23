@@ -429,7 +429,7 @@ Using ``conda``:
 
 .. code-block:: console
 
-    $ conda install -c https://conda.binstar.org/esc python-blosc
+    $ conda install -c esc python-blosc
 
 Experimental, Numpy 1.8 / Python 2.7 only..
 
