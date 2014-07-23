@@ -243,6 +243,8 @@ Python API
 
 * Implemented as a C-extension using the Python-C-API
 
+* Support Python ``2.{6,7}`` and ``3.{2,3,4}`` (Tested with Travis CI)
+
 Example -- Setup
 ----------------
 
