@@ -501,11 +501,11 @@ Advertisment
 
 * EuroPython
 
-  * Francecs Alted - Out of Core Columnar Datasets - Friday 11:00 C01
+  * Francesc Alted - Out of Core Columnar Datasets - Friday 11:00 C01
 
 * PyData Berlin
 
-  * Francecs Alted - Data Oriented Programming - Saturday 13:30 B05
+  * Francesc Alted - Data Oriented Programming - Saturday 13:30 B05
   * Valentin Haenel - Fast Serialization of Numpy Arrays with Bloscpack - Sunday 11:00 am B05
 
 Getting In Touch
