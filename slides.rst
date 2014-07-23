@@ -476,7 +476,7 @@ Other Projects that use Blosc
     HDF Library
 :Bloscpack:
     Simple file-format and Python implementation
-:CArray / BLZ / bcolz:
+:bcolz:
     In-memory and out-of-core compressed array-like structure
 
 The Future
